@@ -41,5 +41,6 @@ sharibatezu/
 
 ## 詳細ドキュメント
 
+- 環境構築手順 → `docs/setup.md`
 - 機能仕様 → `docs/spec.md`
 - アーキテクチャ設計 → `docs/architecture.md`
