@@ -40,10 +40,11 @@ sharibatezu/
 │   └── architecture.md
 ├── src/
 │   ├── index.ts              # Honoエントリーポイント・ルート定義
-│   ├── routes/
-│   │   └── calculator.ts     # 計算ページのルートハンドラ
+│   ├── bmi.tsx               # BMIルートハンドラ
+│   ├── views/
+│   │   └── bmi.tsx           # Hono JSX によるHTMLレンダリング
 │   ├── lib/
-│   │   └── energy.ts         # エネルギー計算ロジック
+│   │   └── bmi.ts            # BMI計算ロジック
 │   └── data/
 │       └── mountains.json    # 百名山データ（静的）
 ├── wrangler.toml
@@ -73,10 +74,10 @@ Honoアプリのエントリーポイント。ルートをマウントする。
 
 ```typescript
 import { Hono } from 'hono'
-import { calculatorRoute } from './routes/calculator'
+import bmi from './bmi'
 
 const app = new Hono()
-app.route('/', calculatorRoute)
+app.route('/bmi', bmi)
 
 export default app
 ```
