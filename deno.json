@@ -1,4 +1,8 @@
 {
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx"
+  },
   "tasks": {
     "dev": "deno run -A npm:wrangler dev",
     "deploy": "deno run -A npm:wrangler deploy --minify",
@@ -7,6 +11,7 @@
   },
   "imports": {
     "hono": "npm:hono@^4.12.0",
-    "hono/": "npm:hono@^4.12.0/"
+    "hono/": "npm:hono@^4.12.0/",
+    "hono/jsx/jsx-runtime": "npm:hono@^4.12.0/jsx/jsx-runtime"
   }
 }
