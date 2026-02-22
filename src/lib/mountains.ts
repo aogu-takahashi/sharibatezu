@@ -9,7 +9,7 @@ export type Mountain = {
   courseConstant: number;
 };
 
-export const mountains: Mountain[] = mountainsData;
+export const mountains = mountainsData as Mountain[];
 
 export function findById(id: number): Mountain | undefined {
   return mountains.find((m) => m.id === id);
