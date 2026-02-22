@@ -4,8 +4,7 @@
 
 | ツール | 推奨バージョン | 用途 |
 |--------|--------------|------|
-| Node.js | v20以上 | 実行環境 |
-| npm | v10以上 | パッケージ管理 |
+| Deno | v2以上 | 実行環境・パッケージ管理 |
 
 ---
 
@@ -18,25 +17,10 @@ cd sharibatezu
 
 ---
 
-## 2. 依存パッケージのインストール
+## 2. ローカル開発サーバーの起動
 
 ```bash
-npm install
-```
-
-`package.json` に記載された以下のパッケージがインストールされる：
-
-| パッケージ | バージョン | 種別 | 用途 |
-|------------|-----------|------|------|
-| hono | ^4.12.0 | dependencies | Webフレームワーク |
-| wrangler | ^4.4.0 | devDependencies | Cloudflare Workers CLI |
-
----
-
-## 3. ローカル開発サーバーの起動
-
-```bash
-npm run dev
+deno task dev
 ```
 
 - `http://localhost:8787` でアクセスできる
@@ -45,22 +29,22 @@ npm run dev
 
 ---
 
-## 4. Cloudflare へのデプロイ
+## 3. Cloudflare へのデプロイ
 
-### 4-1. Cloudflare アカウントへログイン
+### 3-1. Cloudflare アカウントへログイン
 
 初回のみ必要。
 
 ```bash
-npx wrangler login
+deno run -A npm:wrangler login
 ```
 
 ブラウザが開くので、Cloudflare アカウントで認証する。
 
-### 4-2. デプロイ
+### 3-2. デプロイ
 
 ```bash
-npm run deploy
+deno task deploy
 ```
 
 デプロイ完了後、`https://sharibatezu.<アカウント名>.workers.dev` でアクセスできる。
@@ -71,9 +55,10 @@ npm run deploy
 
 | コマンド | 内容 |
 |----------|------|
-| `npm run dev` | ローカル開発サーバー起動 |
-| `npm run deploy` | Cloudflare Workers へデプロイ |
-| `npm run cf-typegen` | Cloudflare バインディングの型定義を生成 |
+| `deno task dev` | ローカル開発サーバー起動 |
+| `deno task deploy` | Cloudflare Workers へデプロイ |
+| `deno task cf-typegen` | Cloudflare バインディングの型定義を生成 |
+| `deno task test` | テストを実行 |
 
 ---
 
@@ -92,7 +77,7 @@ sharibatezu/
 │   ├── lib/             # 計算ロジック
 │   └── data/            # 百名山静的データ
 ├── wrangler.jsonc        # Cloudflare Workers 設定
-├── package.json
+├── deno.json
 └── tsconfig.json
 ```
 
