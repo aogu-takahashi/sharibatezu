@@ -1,0 +1,20 @@
+{
+  "languages": {
+    "TypeScript": {
+      "language_servers": ["deno", "!typescript-language-server"]
+    },
+    "TSX": {
+      "language_servers": ["deno", "!typescript-language-server"]
+    }
+  },
+  "lsp": {
+    "deno": {
+      "settings": {
+        "deno": {
+          "enable": true,
+          "unstable": false
+        }
+      }
+    }
+  }
+}
