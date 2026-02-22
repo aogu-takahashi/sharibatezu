@@ -7,7 +7,10 @@
     "dev": "deno run -A npm:wrangler dev",
     "deploy": "deno run -A npm:wrangler deploy --minify",
     "cf-typegen": "deno run -A npm:wrangler types --env-interface CloudflareBindings",
-    "test": "deno test src/lib/"
+    "test": "deno test src/lib/",
+    "fmt": "deno fmt src/",
+    "lint": "deno lint src/",
+    "check": "deno check src/**/*.ts src/**/*.tsx"
   },
   "imports": {
     "hono": "npm:hono@^4.12.0",

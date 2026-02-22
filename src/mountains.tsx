@@ -1,6 +1,6 @@
 import { Hono } from "hono";
-import { mountains } from "./lib/mountains";
-import { MountainSelectPage } from "./views/mountains";
+import { mountains } from "./lib/mountains.ts";
+import { MountainSelectPage } from "./views/mountains.tsx";
 
 const mountainsRoute = new Hono();
 

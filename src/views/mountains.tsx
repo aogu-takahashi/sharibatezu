@@ -1,4 +1,4 @@
-import type { Mountain } from "../lib/mountains";
+import type { Mountain } from "../lib/mountains.ts";
 
 export function MountainSelectPage({ mountains }: { mountains: Mountain[] }) {
   return (

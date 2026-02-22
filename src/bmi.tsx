@@ -1,6 +1,6 @@
 import { Hono } from "hono";
-import { calculateBmi } from "./lib/bmi";
-import { BmiFormPage, BmiResultPage, BmiErrorPage } from "./views/bmi";
+import { calculateBmi } from "./lib/bmi.ts";
+import { BmiErrorPage, BmiFormPage, BmiResultPage } from "./views/bmi.tsx";
 
 const bmi = new Hono();
 

@@ -1,6 +1,6 @@
 import { Hono } from "hono";
-import bmi from "./bmi";
-import mountainsRoute from "./mountains";
+import bmi from "./bmi.tsx";
+import mountainsRoute from "./mountains.tsx";
 
 const app = new Hono();
 
